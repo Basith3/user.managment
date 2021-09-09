@@ -29,7 +29,23 @@
                 <label class="password"><b>Password</b></label><br>
                 <input class="password" type="text" eid="password">
             </div>
-            <button type="add">Add</button>
+            <button id='btn'>Add</button>
             </form>
+            <script>
+                let addeduser = {};
+                const adduser = (ev)=>{
+                    ev.preventDefault();
+                    let user = {
+                        id: Date.now(),
+                        name: document.getElementById(name).value,
+                        eidpass: document.getElementById(eid).value
+                    }
+                    adduser.push(user);
+                    consloe.warn('added', {addeduser});
+                }
+                document.addEventListener('DOMContentLoaded', ()=>{
+                    document.getElementById('btn').addEventListener('Add', adduser);
+                });
+            </script>
     </body>
 </html>
